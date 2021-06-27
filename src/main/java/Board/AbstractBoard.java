@@ -3,7 +3,7 @@ package Board;
 import java.util.concurrent.ExecutionException;
 
 public abstract class AbstractBoard {
-    protected final int[][] boardFields = new int[][] {
+    protected int[][] boardFields = new int[][] {
             {0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0},
@@ -13,6 +13,22 @@ public abstract class AbstractBoard {
             {0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0}
     };
+    protected void resetBoard(){
+        boardFields = new int[][] {
+                {0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0}};
+    }
+
+    protected void setBoardElement(int x, int y, int value){
+        boardFields[y][x] = value;
+    }
+
     public int getBoardLength(){
         return boardFields.length;
     }
@@ -34,5 +50,6 @@ public abstract class AbstractBoard {
     }
 
     abstract void changePosition();
+    public abstract void updatePositions();
 
 }

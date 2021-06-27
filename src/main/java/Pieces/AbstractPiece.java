@@ -7,7 +7,7 @@ public abstract class AbstractPiece {
     int positionX = -1;
     int positionY = -1;
 
-    void setPositionXY(int x, int y) {
+    public void setPositionXY(int x, int y) {
         if(x < 8 && x >= 0) {
             positionX = x;
         }
