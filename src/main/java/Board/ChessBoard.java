@@ -101,6 +101,20 @@ public class ChessBoard extends AbstractBoard {
         }
     }
 
+
+    @Override
+    public AbstractPiece findPieceByCoords(int x, int y){
+
+        for (AbstractPiece piece: Pieces) {
+            if(piece.getPosition()[0] == x && piece.getPosition()[1] == y){
+                return piece;
+            }
+        }
+        return null;
+    }
+
+
+
     @Override
     void changePosition() {
 

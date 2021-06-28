@@ -1,5 +1,7 @@
 package Board;
 
+import Pieces.AbstractPiece;
+
 import java.util.concurrent.ExecutionException;
 
 public abstract class AbstractBoard {
@@ -32,7 +34,7 @@ public abstract class AbstractBoard {
     public int getBoardLength(){
         return boardFields.length;
     }
-    public int getElementValueByBoardCoords(String x, int y){
+    /*public int getElementValueByBoardCoords(String x, int y){
         int intX = -1;
         if(x.equals("A")) intX = 0;
         else if(x.equals("B")) intX = 1;
@@ -44,12 +46,15 @@ public abstract class AbstractBoard {
         else if(x.equals("H")) intX = 7;
         //else throw new ExecutionException();
         return boardFields[y][intX];
-    }
+    }*/
+
+
+
     public int getElementValueByTableCoords(int x, int y){
         return boardFields[y][x];
     }
 
     abstract void changePosition();
     public abstract void updatePositions();
-
+    public abstract AbstractPiece findPieceByCoords(int x, int y);
 }
